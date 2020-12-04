@@ -1,7 +1,11 @@
 var submitButton = document.getElementById("submitButton");
 var timer = document.getElementById("timer"); // Timer Variable 
+var quizChallengePage = document.getElementById("quizChallengePage");
+
 
 function startQuiz() { 
+    quizChallengePage.style.display = "none"; // Hide first page after Start Quiz button is clicked
+
     secondsLeft = 5;
     
       var timerInterval = setInterval(function() { 
