@@ -13,5 +13,8 @@ function startQuiz() {
         }, 1000);
     }
 
-    // Start quiz clock
-    startQuiz()
+    // Start quiz clock when the button is pushed
+    submitButton.addEventListener("click", function() { 
+        startQuiz()
+        console.log("start")
+      })
