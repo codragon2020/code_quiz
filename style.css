@@ -33,3 +33,19 @@ p {
     text-align: center;
     font-family: "Times New Roman", Times, serif;
 }
+
+.btn {
+    text-align: center;
+    background-color: blue;
+    border-color: #64a29a;
+    color: white;
+    font-size: 24px;
+    padding: 0px 12px 0px 12px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+  }
