@@ -6,16 +6,23 @@
     <title>Coder's Trivia</title>
     <!-- CSS styling -->
     <link rel="stylesheet" type="text/css" href="./style.css">
-  
+    <!-- Link to Boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 </head>
 <body>
-    <header class="card-body">
-        <a class="score">View High Scores</a>
-        <a id="timer" class="time">Time: </a>
-    </header>
+    <nav class="header">
+        <header class="card-body">
+            <a class="score">View High Scores</a>
+            <a id="timer" class="time">Time: </a>
+        </header>
+    </nav>
+    
 
     <!-- Main page includes Title and description -->
     <main class="container">
+        
+        <!-- Quiz Challenge Page -->
         <div id="quizChallengePage">
             <div class="body"> 
                 <h1>Coding Quiz Challenge</h1>
@@ -32,8 +39,10 @@
                 </div>
             </div>
         </div>
+
+        <!-- Quiz Question Page -->
         <div id="quizQuestionsPage">
-            <h2>Quiz Question 1</h2>
+            <h2 id="quizQuestionHeader">text</h2>
         </div>
     </main>
     
