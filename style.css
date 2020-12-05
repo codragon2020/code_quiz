@@ -14,6 +14,11 @@
     padding-left: 20px;
 }
 
+#timer {
+    float: right;
+    padding-right: 30px; 
+ }
+ 
 .time {
     float: right;
     padding-right: 20px;
