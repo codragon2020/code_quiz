@@ -7,6 +7,7 @@ var quizQuestionsPage = document.getElementById("quizQuestionsPage"); // Quiz pa
 function homePage() {
     quizChallengePage.style.display = "block"; // Hide first page after Start Quiz button is clicked
     quizQuestionsPage.style.display = "none"; // Hide Quiz Questions Page
+    timer.textContent = "Time: "; // Holder text in nav bar 
 
 }
 
