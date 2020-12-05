@@ -1,7 +1,7 @@
 var submitButton = document.getElementById("submitButton");
 var timer = document.getElementById("timer"); // Timer Variable 
-var quizChallengePage = document.getElementById("quizChallengePage");
-var quizQuestionsPage = document.getElementById("quizQuestionsPage");
+var quizChallengePage = document.getElementById("quizChallengePage"); // Initial page variable
+var quizQuestionsPage = document.getElementById("quizQuestionsPage"); // Quiz page variable
 
 
 function homePage() {
@@ -12,13 +12,15 @@ function homePage() {
 
 homePage();
 
+// This will start the quiz from the homePage
 function startQuiz() { 
     quizChallengePage.style.display = "none"; // Hide first page after Start Quiz button is clicked
     quizQuestionsPage.style.display = "block"; // Next, show quiz questions page 
     console.log("page1 loaded")
 
-    secondsLeft = 5;
-    
+    secondsLeft = 5; //Testing with 5 sec to see what happens
+        
+    //Countdown that ends the quiz
       var timerInterval = setInterval(function() { 
         secondsLeft--;
         timer.textContent = "Time: " + secondsLeft;
