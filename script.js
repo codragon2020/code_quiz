@@ -2,6 +2,7 @@ var submitButton = document.getElementById("submitButton");
 var timer = document.getElementById("timer"); // Timer Variable 
 var quizChallengePage = document.getElementById("quizChallengePage"); // Initial page variable
 var quizQuestionsPage = document.getElementById("quizQuestionsPage"); // Quiz page variable
+var quizQuestionHeader = document.getElementById("quizQuestionHeader");
 
 
 function homePage() {
