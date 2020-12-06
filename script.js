@@ -4,6 +4,7 @@ var timer = document.getElementById("timer"); // Timer Variable
 var quizChallengePage = document.getElementById("quizChallengePage"); // Initial page variable
 var quizQuestionsPage = document.getElementById("quizQuestionsPage"); // Quiz page variable
 var quizQuestionHeader = document.getElementById("quizQuestionHeader"); // Presents quiz question
+var answerResponse = document.getElementById("answerResponse"); // Presents the response to the user's choice
 
 // Choices provided for each quiz question
 var choice1 = document.getElementById("one"); 
@@ -19,7 +20,7 @@ var quizQuestions = [
     "two" : "2. string",
     "three" : "3. variable",
     "four" : "4. boolean",
-    "correct" : "2. string",
+    "correct" : "3. variable",
     },
 ]
 
@@ -72,7 +73,7 @@ function startQuiz() {
     showQuestions();
 
     choice1.addEventListener("click", function (event) {
-        checkAnswer(event);
+        checkAnswer(event); // Calls checkAnswer function
     })
     choice2.addEventListener("click", function (event) {
         checkAnswer(event);
@@ -89,3 +90,26 @@ function startQuiz() {
         startQuiz()
         console.log("start")
       })
+
+    
+// Check if Answer is correct or not
+function checkAnswer(event) {
+    event.preventDefault();
+
+    var answer = event.currentTarget.dataset.answer;
+    console.log('Selected Answer: ', answer);
+    var correctAnswer = null;
+    console.log('CorrectAnswer Defined: ', correctAnswer);
+    
+    if (quizQuestions[questionIndex].correct === answer) {
+        correctAnswer = answer;
+        console.log('Correct Answer: ', correctAnswer);
+    }
+    if (answer === correctAnswer) {
+        answerResponse.textContent = "That's Correct!"; // If correct, say so
+        console.log('Thats Correct')
+    } else {
+        answerResponse.textContent = "Wrong Answer!"; // If wrong, say so
+        console.log('Wrong Answer')
+    }
+}
