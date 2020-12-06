@@ -1,15 +1,17 @@
-var submitButton = document.getElementById("submitButton");
+// Initializing all variables
+var submitButton = document.getElementById("submitButton"); // Start Quiz submitButton
 var timer = document.getElementById("timer"); // Timer Variable 
 var quizChallengePage = document.getElementById("quizChallengePage"); // Initial page variable
 var quizQuestionsPage = document.getElementById("quizQuestionsPage"); // Quiz page variable
-var quizQuestionHeader = document.getElementById("quizQuestionHeader");
+var quizQuestionHeader = document.getElementById("quizQuestionHeader"); // Presents quiz question
 
-var choice1 = document.getElementById("one");
+// Choices provided for each quiz question
+var choice1 = document.getElementById("one"); 
 var choice2 = document.getElementById("two");
 var choice3 = document.getElementById("three");
 var choice4 = document.getElementById("four");
 
-// Quiz Questions array
+// Quiz Questions array stores the different quiz questions
 var quizQuestions = [
     {
     "quizQuestionHeader" : "Which is not a JavaScript Data type:", 
@@ -23,6 +25,7 @@ var quizQuestions = [
 
 var questionIndex = 0;
 
+// Presents the Challenge page and hides the rest
 function homePage() {
     quizChallengePage.style.display = "block"; // Hide first page after Start Quiz button is clicked
     quizQuestionsPage.style.display = "none"; // Hide Quiz Questions Page
@@ -50,6 +53,7 @@ function startQuiz() {
         }, 1000);
     }
 
+    // Show Questions function to set each answer in association with quizQuestions array
     function showQuestions() {
         var q = quizQuestions[questionIndex];
       
