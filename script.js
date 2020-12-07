@@ -68,7 +68,8 @@ function startQuiz() {
         timer.textContent = "Time: " + secondsLeft;
         if (secondsLeft === 0 || quizQuestions.length === questionIndex) {
             clearInterval(timerInterval);
-            showFinalScore();
+            // showFinalScore();
+
             // if ((quizQuestionsPage.style.display = "none") && (quizChallengePage.style.display = "none")) {
             //     clearInterval(timerInterval);
             //     }
@@ -139,7 +140,7 @@ function checkAnswer(event) {
             secondsLeft = 0;
       }
     }
-    if (quizQuestions.length === questionIndex+1) {
+    if (quizQuestions.length === questionIndex + 1) {
         showFinalScore(); // If it has gone through all questions, show final score
         return; // If not, print the next question
     }
@@ -155,11 +156,15 @@ function showFinalScore() {
 
     // Text Content modification
     finalScoreIs.textContent = "Your final score is " + secondsLeft;
-    
+    // if (finalScoreIs) {
+    // var timerInterval;
+    // clearInterval(timerInterval);
+    // }
     // if (finalScorePage.style.display = "block") {
+    //     var timerInterval;
     //     clearInterval(timerInterval);
     // }
-
+    console.log('showFinalScore is running');
 }
 
 // Always load the homePage first
