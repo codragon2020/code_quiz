@@ -18,7 +18,7 @@
     float: right;
     padding-right: 30px; 
  }
- 
+
 .time {
     float: right;
     padding-right: 20px;
@@ -67,4 +67,17 @@ p {
     padding-top: 100px;
     padding-left: 15%; 
     padding-bottom: 15px; 
+}
+
+/* Quiz Questions Page */
+li {
+    list-style-type: none; 
+    padding-left: 15%; 
+}
+
+#answerResponse {
+    font-style: italic;
+    color: grey;
+    font-size: 15px;
+    padding-left: 15%;  
 }
