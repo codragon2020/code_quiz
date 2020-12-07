@@ -22,6 +22,14 @@ var quizQuestions = [
     "four" : "4. boolean",
     "correct" : "3. variable",
     },
+    {
+    "quizQuestionHeader" : "Which of the following is not a looping structure in JavaScript:", 
+    "one" : "1. For",
+    "two" : "2. While",
+    "three" : "3. Do While",
+    "four" : "4. array",
+    "correct" : "4. array",
+    }
 ]
 
 var questionIndex = 0;
@@ -111,5 +119,10 @@ function checkAnswer(event) {
     } else {
         answerResponse.textContent = "Wrong Answer!"; // If wrong, say so
         console.log('Wrong Answer')
+        secondsLeft -= 10
+        if (secondsLeft < 0) {
+            secondsLeft = 0;
+      }
     }
+    
 }
