@@ -8,6 +8,8 @@ var answerResponse = document.getElementById("answerResponse"); // Presents the 
 
 var finalScorePage = document.getElementById("finalScorePage");
 var allDone = document.getElementById("allDone");
+var finalScoreIs = document.getElementById("finalScoreIs");
+
 
 // Choices provided for each quiz question
 var choice1 = document.getElementById("one"); 
@@ -43,7 +45,8 @@ function homePage() {
     quizQuestionsPage.style.display = "none"; // Hide Quiz Questions Page
     finalScorePage.style.display = "none";   // Hide Final Core Page 
     
-    timer.textContent = "Time: "; // Holder text in nav bar 
+    var startScore = 0; // Starting time
+    timer.textContent = "Time: " + startScore; // Holder text in nav bar 
 
 }
 
@@ -141,9 +144,15 @@ function checkAnswer(event) {
 }
 
 function showFinalScore() {
-    quizChallengePage.style.display = "none"; // Hide Questions Page
-    quizQuestionsPage.style.display = "none"; // Hide Questions Page
-    finalScorePage.style.display = "block";   // Show Final Score Page 
+    quizChallengePage.style.display = "none"; // Hides Challenge Page
+    quizQuestionsPage.style.display = "none"; // Hides Questions Page
+    finalScorePage.style.display = "block";   // Shows Final Score Page 
+    finalScoreIs.style.display = "block"; // Shows Final Score
+
+    // Text Content modification
+    finalScoreIs.textContent = "Your final score is " + secondsLeft;
+
+
 }
 
 // Always load the homePage first
