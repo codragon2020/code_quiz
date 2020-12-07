@@ -66,7 +66,7 @@ function startQuiz() {
       var timerInterval = setInterval(function() { 
         secondsLeft--;
         timer.textContent = "Time: " + secondsLeft;
-            if (secondsLeft === 0 || quizQuestions.length === questionIndex) {
+            if (secondsLeft === 0 || finalScorePage.style.display === "block") { // Clock stops with finalScorePage display
                 clearInterval(timerInterval);
             } 
         }, 1000);
