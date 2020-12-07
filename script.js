@@ -6,6 +6,9 @@ var quizQuestionsPage = document.getElementById("quizQuestionsPage"); // Quiz pa
 var quizQuestionHeader = document.getElementById("quizQuestionHeader"); // Presents quiz question
 var answerResponse = document.getElementById("answerResponse"); // Presents the response to the user's choice
 
+var finalScorePage = document.getElementById("finalScorePage");
+var allDone = document.getElementById("allDone");
+
 // Choices provided for each quiz question
 var choice1 = document.getElementById("one"); 
 var choice2 = document.getElementById("two");
@@ -38,6 +41,8 @@ var questionIndex = 0;
 function homePage() {
     quizChallengePage.style.display = "block"; // Hide first page after Start Quiz button is clicked
     quizQuestionsPage.style.display = "none"; // Hide Quiz Questions Page
+    finalScorePage.style.display = "none";   // Hide Final Core Page 
+    
     timer.textContent = "Time: "; // Holder text in nav bar 
 
 }
@@ -48,6 +53,8 @@ homePage();
 function startQuiz() { 
     quizChallengePage.style.display = "none"; // Hide first page after Start Quiz button is clicked
     quizQuestionsPage.style.display = "block"; // Next, show quiz questions page 
+    finalScorePage.style.display = "none"; // Hide Final Score Page 
+
     console.log("page1 loaded")
 
     secondsLeft = 50; //Testing with 50 sec to see what happens
@@ -58,6 +65,7 @@ function startQuiz() {
         timer.textContent = "Time: " + secondsLeft;
         if (secondsLeft === 0 || quizQuestions.length === questionIndex) {
             clearInterval(timerInterval);
+            showFinalScore();
           }
         }, 1000);
     }
@@ -124,5 +132,19 @@ function checkAnswer(event) {
             secondsLeft = 0;
       }
     }
-    
+    if (quizQuestions.length === questionIndex+1) {
+        showFinalScore(); // If it has gone through all questions, show final score
+        return; // If not, print the next question
+    }
+    questionIndex++; // Increment the question index to get to the next question in array
+    showQuestions(); // Call show questions function to display the question and answers
 }
+
+function showFinalScore() {
+    quizChallengePage.style.display = "none"; // Hide Questions Page
+    quizQuestionsPage.style.display = "none"; // Hide Questions Page
+    finalScorePage.style.display = "block";   // Show Final Score Page 
+}
+
+// Always load the homePage first
+homePage(); 
