@@ -66,18 +66,9 @@ function startQuiz() {
       var timerInterval = setInterval(function() { 
         secondsLeft--;
         timer.textContent = "Time: " + secondsLeft;
-        if (secondsLeft === 0 || quizQuestions.length === questionIndex + 1) {
-            clearInterval(timerInterval);
-            // showFinalScore();
-
-            
-            // if ((quizQuestionsPage.style.display = "none") && (quizChallengePage.style.display = "none")) {
-            //     clearInterval(timerInterval);
-            //     }
-          }             
-        //   if (finalScorePage.style.display = "block") {
-        //     clearInterval(timerInterval);
-        // }
+            if (secondsLeft === 0 || quizQuestions.length === questionIndex + 1) {
+                clearInterval(timerInterval);
+            } 
         }, 1000);
     }
 
