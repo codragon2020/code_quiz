@@ -66,15 +66,18 @@ function startQuiz() {
       var timerInterval = setInterval(function() { 
         secondsLeft--;
         timer.textContent = "Time: " + secondsLeft;
-        if (secondsLeft === 0 || quizQuestions.length === questionIndex) {
+        if (secondsLeft === 0 || quizQuestions.length === questionIndex + 1) {
             clearInterval(timerInterval);
             // showFinalScore();
 
+            
             // if ((quizQuestionsPage.style.display = "none") && (quizChallengePage.style.display = "none")) {
             //     clearInterval(timerInterval);
             //     }
           }             
-            
+        //   if (finalScorePage.style.display = "block") {
+        //     clearInterval(timerInterval);
+        // }
         }, 1000);
     }
 
@@ -142,6 +145,7 @@ function checkAnswer(event) {
     }
     if (quizQuestions.length === questionIndex + 1) {
         showFinalScore(); // If it has gone through all questions, show final score
+        
         return; // If not, print the next question
     }
     questionIndex++; // Increment the question index to get to the next question in array
@@ -153,7 +157,7 @@ function showFinalScore() {
     quizQuestionsPage.style.display = "none"; // Hides Questions Page
     finalScorePage.style.display = "block";   // Shows Final Score Page 
     finalScoreIs.style.display = "block"; // Shows Final Score
-
+    console.log('showFinalScore = Block')
     // Text Content modification
     finalScoreIs.textContent = "Your final score is " + secondsLeft;
     // if (finalScoreIs) {
