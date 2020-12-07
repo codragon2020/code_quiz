@@ -45,7 +45,7 @@ function homePage() {
     quizQuestionsPage.style.display = "none"; // Hide Quiz Questions Page
     finalScorePage.style.display = "none";   // Hide Final Core Page 
     
-    var startScore = 0; // Starting time
+    var startScore = 10; // Starting time
     timer.textContent = "Time: " + startScore; // Holder text in nav bar 
 
 }
@@ -66,7 +66,7 @@ function startQuiz() {
       var timerInterval = setInterval(function() { 
         secondsLeft--;
         timer.textContent = "Time: " + secondsLeft;
-            if (secondsLeft === 0 || quizQuestions.length === questionIndex + 1) {
+            if (secondsLeft === 0 || quizQuestions.length === questionIndex) {
                 clearInterval(timerInterval);
             } 
         }, 1000);
