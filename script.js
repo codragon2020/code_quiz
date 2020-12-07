@@ -60,7 +60,7 @@ function startQuiz() {
 
     console.log("page1 loaded")
 
-    secondsLeft = 50; //Testing with 50 sec to see what happens
+    secondsLeft = 10; //Testing with 5 sec to see what happens
         
     //Countdown that ends the quiz
       var timerInterval = setInterval(function() { 
@@ -69,7 +69,11 @@ function startQuiz() {
         if (secondsLeft === 0 || quizQuestions.length === questionIndex) {
             clearInterval(timerInterval);
             showFinalScore();
-          }
+            // if ((quizQuestionsPage.style.display = "none") && (quizChallengePage.style.display = "none")) {
+            //     clearInterval(timerInterval);
+            //     }
+          }             
+            
         }, 1000);
     }
 
@@ -151,7 +155,10 @@ function showFinalScore() {
 
     // Text Content modification
     finalScoreIs.textContent = "Your final score is " + secondsLeft;
-
+    
+    // if (finalScorePage.style.display = "block") {
+    //     clearInterval(timerInterval);
+    // }
 
 }
 
