@@ -90,6 +90,10 @@ function startQuiz() {
 
     showQuestions();
 
+function showHighScores() {
+
+}
+
     // Event Listeners
     choice1.addEventListener("click", function (event) {
         checkAnswer(event); // Calls checkAnswer function
@@ -109,6 +113,12 @@ function startQuiz() {
         startQuiz()
         console.log("start")
       })
+
+    // Submit initials to High Scores Page then show high scores
+    initialButton.addEventListener("click", function() { 
+        showHighScores();
+        console.log("initial button")
+    }) 
 
     
 // Check if Answer is correct or not
