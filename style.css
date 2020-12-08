@@ -99,6 +99,7 @@ li {
     padding-left: 15%;
 }
 
+/* Final Scores Page */
 #finalScoreIs {
     padding-left: 15% !important;
     padding: 20px;
@@ -111,4 +112,23 @@ li {
     text-align: center !important; 
     padding-left: 15% !important;
     padding-right: 15% !important;
+}
+
+#highScores {
+    text-align: left;
+    padding-top: 150px;
+    font-weight: bolder; 
+    padding-left: 15%;
+}
+
+#highScoresList {
+    background-color: yellowgreen;
+    font-size: 20px;
+    padding-right: 75%;
+    padding-left: 15%;
+}
+
+#highScoreButtons {
+    margin-left: 15%; 
+    margin-right: 15%;
 }

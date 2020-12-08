@@ -14,6 +14,8 @@ var initials = document.getElementById("initials");
 var initialInput = document.getElementById("initialInput"); 
 var initialButton = document.getElementById("initialButton"); 
 
+var highScoresPage = document.getElementById("highScoresPage");
+
 // Choices provided for each quiz question
 var choice1 = document.getElementById("one"); 
 var choice2 = document.getElementById("two");
@@ -91,7 +93,13 @@ function startQuiz() {
     showQuestions();
 
 function showHighScores() {
-
+    finalScorePage.style.display = "block";   // Shows Final Score Page 
+    highScoresPage.style.display = "block"; // Show High Scores Page
+    allDone.style.display = "none"; // Hides All Done text
+    finalScoreIs.style.display = "none"; // Hides Final Score
+    initials.style.display = "none"; // Hides Label Text
+    initialInput.style.display = "none"; // Hides Input field on Final Score Page
+    initialButton.style.display = "none"; // Hides Button on Final Score Page
 }
 
     // Event Listeners
@@ -157,6 +165,7 @@ function checkAnswer(event) {
 function showFinalScore() {
     quizChallengePage.style.display = "none"; // Hides Challenge Page
     quizQuestionsPage.style.display = "none"; // Hides Questions Page
+    highScoresPage.style.display = "none"; // Hides High Scores Page
     finalScorePage.style.display = "block";   // Shows Final Score Page 
     finalScoreIs.style.display = "block"; // Shows Final Score
     initials.style.display = "block"; // Shows Label Text
