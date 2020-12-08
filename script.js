@@ -50,15 +50,13 @@ function homePage() {
 
 }
 
-homePage();
+// homePage();
 
 // This will start the quiz from the homePage
 function startQuiz() { 
     quizChallengePage.style.display = "none"; // Hide first page after Start Quiz button is clicked
     quizQuestionsPage.style.display = "block"; // Next, show quiz questions page 
     finalScorePage.style.display = "none"; // Hide Final Score Page 
-
-    console.log("page1 loaded")
 
     secondsLeft = 10; //Testing with 5 sec to see what happens
         
@@ -87,9 +85,9 @@ function startQuiz() {
         choice4.setAttribute("data-answer", q.four);
       }
 
-    // Event Listeners
     showQuestions();
 
+    // Event Listeners
     choice1.addEventListener("click", function (event) {
         checkAnswer(event); // Calls checkAnswer function
     })
