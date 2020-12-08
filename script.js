@@ -10,6 +10,9 @@ var finalScorePage = document.getElementById("finalScorePage");
 var allDone = document.getElementById("allDone");
 var finalScoreIs = document.getElementById("finalScoreIs");
 
+var initials = document.getElementById("initials"); 
+var initialInput = document.getElementById("initialInput"); 
+var initialButton = document.getElementById("initialButton"); 
 
 // Choices provided for each quiz question
 var choice1 = document.getElementById("one"); 
@@ -146,17 +149,14 @@ function showFinalScore() {
     quizQuestionsPage.style.display = "none"; // Hides Questions Page
     finalScorePage.style.display = "block";   // Shows Final Score Page 
     finalScoreIs.style.display = "block"; // Shows Final Score
-    console.log('showFinalScore = Block')
+    initials.style.display = "block"; // Shows Label Text
+    initialInput.style.display = "block"; // Shows Input field on Final Score Page
+    initialButton.style.display = "block"; // Shows Button on Final Score Page
+
     // Text Content modification
     finalScoreIs.textContent = "Your final score is " + secondsLeft;
-    // if (finalScoreIs) {
-    // var timerInterval;
-    // clearInterval(timerInterval);
-    // }
-    // if (finalScorePage.style.display = "block") {
-    //     var timerInterval;
-    //     clearInterval(timerInterval);
-    // }
+    initials.textContent = "Enter Your Initials: "; // Form text
+    initialButton.textContent = "Submit"; // Form button 
     console.log('showFinalScore is running');
 }
 
