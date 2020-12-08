@@ -155,7 +155,7 @@ function showFinalScore() {
 
     // Text Content modification
     finalScoreIs.textContent = "Your final score is " + secondsLeft;
-    initials.textContent = "Enter Your Initials: "; // Form text
+    initials.textContent = "Enter Initials: "; // Form text
     initialButton.textContent = "Submit"; // Form button 
     console.log('showFinalScore is running');
 }
