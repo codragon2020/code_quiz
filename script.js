@@ -104,8 +104,11 @@ function showHighScores() {
     finalScorePage.style.display = "block";   // Shows Final Score Page 
     highScoresPage.style.display = "block"; // Show High Scores Page
 
-    // var getInitials = document.getElementById("initialInput").value; // captures the value of the initials 
-    // var localStorageArray = { score: secondsLeft, initials: getInitials };
+    var getInitials = document.getElementById("initialInput").value; // captures the value of the initials 
+    var localStorageArray = { 
+        score: secondsLeft,
+        initials: getInitials 
+    };
     // highScoreArray.push(localStorageArray);
     // localStorage.setItem("highScore", JSON.stringify(highScoreArray)); // Adds array 
 
@@ -143,6 +146,18 @@ function showHighScores() {
     initialButton.addEventListener("click", function() { 
         showHighScores();
         console.log("initial button")
+        var initials = initialInput.value;
+        console.log(initials);
+        if (initials === "") {
+
+            console.log("No value entered!");
+        } else {
+            var finalScore = {
+                initials: initials,
+                score: secondsLeft
+            }
+            console.log(finalScore);
+        }
     }) 
 
     
