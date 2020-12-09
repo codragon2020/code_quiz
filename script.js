@@ -168,6 +168,8 @@ function checkAnswer(event) {
         secondsLeft -= 10
         if (secondsLeft < 10) {
             secondsLeft = 0;
+            timer.textContent = "Time's up!";
+            showFinalScore();
       }
     }
     if (quizQuestions.length === questionIndex + 1) {
@@ -177,6 +179,7 @@ function checkAnswer(event) {
     }
     questionIndex++; // Increment the question index to get to the next question in array
     showQuestions(); // Call show questions function to display the question and answers
+
 }
 
 function showFinalScore() {
