@@ -15,6 +15,8 @@ var initialInput = document.getElementById("initialInput");
 var initialButton = document.getElementById("initialButton"); 
 
 var highScoresPage = document.getElementById("highScoresPage");
+var score = document.getElementById("score");
+
 
 // Choices provided for each quiz question
 var choice1 = document.getElementById("one"); 
@@ -53,6 +55,7 @@ function homePage() {
     var startScore = 10; // Starting time
     timer.textContent = "Time: " + startScore; // Holder text in nav bar 
 
+    
 }
 
 // homePage();
@@ -67,8 +70,8 @@ function startQuiz() {
         
     //Countdown that ends the quiz
       var timerInterval = setInterval(function() { 
-        secondsLeft--;
-        timer.textContent = "Time: " + secondsLeft;
+        var newSec =  secondsLeft--;
+        timer.textContent = "Time: " + newSec;
             if (secondsLeft === 0 || finalScorePage.style.display === "block") { // Clock stops with finalScorePage display
                 clearInterval(timerInterval);
             } 
@@ -93,13 +96,22 @@ function startQuiz() {
     showQuestions();
 
 function showHighScores() {
-    finalScorePage.style.display = "block";   // Shows Final Score Page 
-    highScoresPage.style.display = "block"; // Show High Scores Page
     allDone.style.display = "none"; // Hides All Done text
     finalScoreIs.style.display = "none"; // Hides Final Score
     initials.style.display = "none"; // Hides Label Text
     initialInput.style.display = "none"; // Hides Input field on Final Score Page
     initialButton.style.display = "none"; // Hides Button on Final Score Page
+    finalScorePage.style.display = "block";   // Shows Final Score Page 
+    highScoresPage.style.display = "block"; // Show High Scores Page
+
+    // var getInitials = document.getElementById("initialInput").value; // captures the value of the initials 
+    // var localStorageArray = { score: secondsLeft, initials: getInitials };
+    // highScoreArray.push(localStorageArray);
+    // localStorage.setItem("highScore", JSON.stringify(highScoreArray)); // Adds array 
+
+    // var highScores = getInitials + ": " + secondsLeft; // add in + getInitials when read it
+    // $("#highScoreList").append(highScores) // Appends high score & initials
+
 }
 
     // Event Listeners
@@ -120,7 +132,12 @@ function showHighScores() {
     submitButton.addEventListener("click", function() { 
         startQuiz()
         console.log("start")
-      })
+    })
+
+    score.addEventListener("click", function() {
+        showHighScores();
+        console.log("view high scores");
+    })
 
     // Submit initials to High Scores Page then show high scores
     initialButton.addEventListener("click", function() { 
@@ -149,7 +166,7 @@ function checkAnswer(event) {
         answerResponse.textContent = "Wrong Answer!"; // If wrong, say so
         console.log('Wrong Answer')
         secondsLeft -= 10
-        if (secondsLeft < 0) {
+        if (secondsLeft < 10) {
             secondsLeft = 0;
       }
     }
@@ -181,3 +198,4 @@ function showFinalScore() {
 
 // Always load the homePage first
 homePage(); 
+
