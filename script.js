@@ -17,6 +17,9 @@ var initialButton = document.getElementById("initialButton");
 var highScoresPage = document.getElementById("highScoresPage");
 var score = document.getElementById("score");
 var highScore = document.querySelector("#highScore");
+var clearHighScore = document.querySelector("#clearHighScore");
+var goBack = document.querySelector("#goBack");
+
 
 // Choices provided for each quiz question
 var choice1 = document.getElementById("one"); 
@@ -96,6 +99,8 @@ function startQuiz() {
     showQuestions();
 
 function showHighScores() {
+    quizChallengePage.style.display = "none"; // Hides Challenge Page
+    quizQuestionsPage.style.display = "none"; // Hides Questions Page
     allDone.style.display = "none"; // Hides All Done text
     finalScoreIs.style.display = "none"; // Hides Final Score
     initials.style.display = "none"; // Hides Label Text
@@ -105,16 +110,10 @@ function showHighScores() {
     highScoresPage.style.display = "block"; // Show High Scores Page
 
     var getInitials = document.getElementById("initialInput").value; // captures the value of the initials 
-    var localStorageArray = { 
-        score: secondsLeft,
-        initials: getInitials 
-    };
-    // highScoreArray.push(localStorageArray);
-    // localStorage.setItem("highScore", JSON.stringify(highScoreArray)); // Adds array 
-
-    // var highScores = getInitials + ": " + secondsLeft; // add in + getInitials when read it
-    // $("#highScoreList").append(highScores) // Appends high score & initials
-
+    // var localStorageArray = { 
+    //     score: secondsLeft,
+    //     initials: getInitials 
+    // };
 }
 
     // Event Listeners
@@ -170,7 +169,7 @@ function showHighScores() {
             localStorage.setItem("allScores", newScore);
         }
 
-        // Retreives local stroage 
+        // Retreives local storage 
         var allScores = localStorage.getItem("allScores");
         allScores = JSON.parse(allScores);
 
@@ -184,6 +183,19 @@ function showHighScores() {
 
             }
         }
+
+        // Event listener to clear scores 
+        clearHighScore.addEventListener("click", function () {
+            localStorage.clear();
+            location.reload();
+            showHighScores();
+        });
+
+        // Event listener to move to index page
+        goBack.addEventListener("click", function () {
+            location.reload();
+            console.log('goBack clicked')
+        });
     }) 
 
     
