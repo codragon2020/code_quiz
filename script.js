@@ -16,7 +16,7 @@ var initialButton = document.getElementById("initialButton");
 
 var highScoresPage = document.getElementById("highScoresPage");
 var score = document.getElementById("score");
-
+var highScore = document.querySelector("#highScore");
 
 // Choices provided for each quiz question
 var choice1 = document.getElementById("one"); 
@@ -157,6 +157,32 @@ function showHighScores() {
                 score: secondsLeft
             }
             console.log(finalScore);
+            
+            // Stores the scores in local storage
+            var allScores = localStorage.getItem("allScores");
+            if (allScores === null) {
+                allScores = [];
+            } else {
+                allScores = JSON.parse(allScores);
+            }
+            allScores.push(finalScore);
+            var newScore = JSON.stringify(allScores);
+            localStorage.setItem("allScores", newScore);
+        }
+
+        // Retreives local stroage 
+        var allScores = localStorage.getItem("allScores");
+        allScores = JSON.parse(allScores);
+
+        if (allScores !== null) {
+
+            for (var i = 0; i < allScores.length; i++) {
+
+                var createLi = document.createElement("li");
+                createLi.textContent = allScores[i].initials + " " + allScores[i].score;
+                highScore.appendChild(createLi);
+
+            }
         }
     }) 
 

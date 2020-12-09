@@ -120,13 +120,6 @@ li {
     font-weight: bolder; 
 }
 
-#highScoresList {
-    background-color: #bfcbd6;
-    font-size: 20px;
-    padding-right: 75%;
-    padding-left: 15%;
-}
-
 #highScoresPage {
     margin-left: 15%; 
     margin-right: 15%;
