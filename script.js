@@ -44,6 +44,22 @@ var quizQuestions = [
     "three" : "3. Do While",
     "four" : "4. array",
     "correct" : "4. array",
+    },
+    {
+    "quizQuestionHeader" : "The condition in an if / else statement is enclosed within ____.", 
+    "one" : "1. quotes",
+    "two" : "2. curly brackets",
+    "three" : "3. parenthesis",
+    "four" : "4. square brackets",
+    "correct" : "3. parenthesis",
+    },
+    {
+    "quizQuestionHeader" : "Arrays in Javascript can be used to store ____.", 
+    "one" : "1. numbers and strings",
+    "two" : "2. other arrays",
+    "three" : "3. booleans",
+    "four" : "4. All the Above",
+    "correct" : "4. All the Above",
     }
 ]
 
@@ -55,7 +71,7 @@ function homePage() {
     quizQuestionsPage.style.display = "none"; // Hide Quiz Questions Page
     finalScorePage.style.display = "none";   // Hide Final Core Page 
     
-    var startScore = 10; // Starting time
+    var startScore = 90; // Starting time
     timer.textContent = "Time: " + startScore; // Holder text in nav bar 
 
     
@@ -70,7 +86,7 @@ function startQuiz() {
     quizQuestionsPage.style.display = "block"; // Next, show quiz questions page 
     finalScorePage.style.display = "none"; // Hide Final Score Page 
 
-    secondsLeft = 5; //Testing with 5 sec to see what happens
+    secondsLeft = 90; 
         
     //Countdown that ends the quiz
         var timerInterval;
