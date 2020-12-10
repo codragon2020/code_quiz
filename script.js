@@ -73,10 +73,12 @@ function startQuiz() {
         
     //Countdown that ends the quiz
       var timerInterval = setInterval(function() { 
-        var newSec =  secondsLeft--;
-        timer.textContent = "Time: " + newSec;
+        secondsLeft--;
+        timer.textContent = "Time: " + secondsLeft;
             if (secondsLeft === 0 || finalScorePage.style.display === "block") { // Clock stops with finalScorePage display
                 clearInterval(timerInterval);
+                timer.textContent = "Time's up!";
+                showFinalScore();
             } 
         }, 1000);
     }
