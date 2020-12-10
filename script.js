@@ -79,7 +79,6 @@ function startQuiz() {
         timer.textContent = "Time: " + secondsLeft;
             if (secondsLeft === 0 || finalScorePage.style.display === "block") { // Clock stops with finalScorePage display
                 clearInterval(timerInterval);
-                timer.textContent = "Time's up!";
                 showFinalScore();
             } 
         }, 1000);
@@ -223,7 +222,7 @@ function checkAnswer(event) {
         secondsLeft = secondsLeft - penalty;
         if (secondsLeft < 10) {
             secondsLeft = 1;
-            timer.textContent = "Time: " + secondsLeft;
+            // timer.textContent = "Time: " + secondsLeft;
             showFinalScore();
       }
     }
