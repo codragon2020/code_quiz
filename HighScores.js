@@ -16,6 +16,7 @@ allScores = JSON.parse(allScores);
 if (allScores !== null) {
     for (var i = 0; i < allScores.length; i++) {
         var createLi = document.createElement("li");
+        createLi.setAttribute("id", "createLi");
         createLi.textContent = allScores[i].initials + " " + allScores[i].score;
         highScore.appendChild(createLi);
     }
