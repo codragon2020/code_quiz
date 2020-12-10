@@ -75,6 +75,13 @@ p {
 li {
     list-style-type: none; 
     padding-left: 15%; 
+    background-color: #d6d6bd;
+    margin-top: 10px;
+    padding: 5px 15px;
+    width: 50%;
+    font-size: 18px;
+    color: black;
+
 }
 
 #answerResponse {
