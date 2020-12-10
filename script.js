@@ -107,13 +107,10 @@ function showHighScores() {
     initialInput.style.display = "none"; // Hides Input field on Final Score Page
     initialButton.style.display = "none"; // Hides Button on Final Score Page
     finalScorePage.style.display = "block";   // Shows Final Score Page 
-    highScoresPage.style.display = "block"; // Show High Scores Page
-
+  
+    // Travels to HighScores page
+    window.location.replace("./HighScores.html");
     var getInitials = document.getElementById("initialInput").value; // captures the value of the initials 
-    // var localStorageArray = { 
-    //     score: secondsLeft,
-    //     initials: getInitials 
-    // };
 }
 
     // Event Listeners
@@ -238,7 +235,6 @@ function checkAnswer(event) {
 function showFinalScore() {
     quizChallengePage.style.display = "none"; // Hides Challenge Page
     quizQuestionsPage.style.display = "none"; // Hides Questions Page
-    highScoresPage.style.display = "none"; // Hides High Scores Page
     finalScorePage.style.display = "block";   // Shows Final Score Page 
     finalScoreIs.style.display = "block"; // Shows Final Score
     initials.style.display = "block"; // Shows Label Text
@@ -250,6 +246,7 @@ function showFinalScore() {
     initials.textContent = "Enter Initials: "; // Form text
     initialButton.textContent = "Submit"; // Form button 
     console.log('showFinalScore is running');
+    
 }
 
 // Always load the homePage first
