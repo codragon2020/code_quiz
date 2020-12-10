@@ -63,16 +63,18 @@ function homePage() {
 
 // homePage();
 
+
 // This will start the quiz from the homePage
 function startQuiz() { 
     quizChallengePage.style.display = "none"; // Hide first page after Start Quiz button is clicked
     quizQuestionsPage.style.display = "block"; // Next, show quiz questions page 
     finalScorePage.style.display = "none"; // Hide Final Score Page 
 
-    secondsLeft = 10; //Testing with 5 sec to see what happens
+    secondsLeft = 5; //Testing with 5 sec to see what happens
         
     //Countdown that ends the quiz
-      var timerInterval = setInterval(function() { 
+        var timerInterval;
+        timerInterval = setInterval(function() { 
         secondsLeft--;
         timer.textContent = "Time: " + secondsLeft;
             if (secondsLeft === 0 || finalScorePage.style.display === "block") { // Clock stops with finalScorePage display
@@ -197,7 +199,7 @@ function showHighScores() {
         });
     }) 
 
-    
+    var penalty = 10;
 // Check if Answer is correct or not
 function checkAnswer(event) {
     event.preventDefault();
@@ -217,21 +219,21 @@ function checkAnswer(event) {
     } else {
         answerResponse.textContent = "Wrong Answer!"; // If wrong, say so
         console.log('Wrong Answer')
-        secondsLeft -= 10
+        // secondsLeft -= 10
+        secondsLeft = secondsLeft - penalty;
         if (secondsLeft < 10) {
-            secondsLeft = 0;
-            timer.textContent = "Time's up!";
+            secondsLeft = 1;
+            timer.textContent = "Time: " + secondsLeft;
             showFinalScore();
       }
     }
     if (quizQuestions.length === questionIndex + 1) {
         showFinalScore(); // If it has gone through all questions, show final score
-        
+    
         return; // If not, print the next question
     }
     questionIndex++; // Increment the question index to get to the next question in array
     showQuestions(); // Call show questions function to display the question and answers
-
 }
 
 function showFinalScore() {
