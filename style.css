@@ -1,3 +1,4 @@
+/* Common elements styling */
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -56,12 +57,13 @@ p {
     height: 50px;
   }
 
-  /* Quiz Page styling */
+/* Home Page styling */
 .quizChallengePage {
     align-items: center !important;
     text-align: center !important; 
 }
 
+/* Quiz Questions Page */
 #quizQuestionHeader {
     font-size: 25px;
     font-weight: bolder; 
@@ -70,21 +72,10 @@ p {
     padding-bottom: 15px; 
 }
 
-/* Quiz Questions Page */
 li {
     list-style-type: none; 
     padding-left: 15%; 
 }
-
-/* .questionButton {
-    text-align: center !important;
-    background-color: #8064A2 !important;
-    border-color: #8064A2 !important;
-    color: white !important;
-    font-size: 22px !important;
-    padding: 0px 12px 0px 12px !important;
-    margin: 5px; 
-} */
 
 #answerResponse {
     font-style: italic;
@@ -93,13 +84,13 @@ li {
     padding-left: 15%;  
 }
 
+/* Final Score Page */
 #allDone {
     font-weight: bolder;
     padding-top: 100px;
     padding-left: 15%;
 }
 
-/* Final Scores Page */
 #finalScoreIs {
     padding-left: 15% !important;
     padding: 20px;
@@ -114,6 +105,7 @@ li {
     padding-right: 15% !important;
 }
 
+/* High Scores Page */
 #highScores {
     text-align: left;
     padding-top: 150px;
