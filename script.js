@@ -264,6 +264,8 @@ function showFinalScore() {
     console.log('showFinalScore is running');
 }
 
+
+
 // Always load the homePage first
 homePage(); 
 
