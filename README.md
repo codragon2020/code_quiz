@@ -1,10 +1,25 @@
-# code_quiz
+# Code Quiz
 
-This project is being created to build a code quiz. As a software engineer, I want to learn how these quizes could work so that I may be prepared to take one in the future.
+This is a quiz application built for people learning about Javascript. 
 
-This project will have a start button that starts a timer.
-When the timer starts the first question of the quiz will be presented.
-After the quiz taker answers the question another will be presented.
-If the wrong answer is provided, time will be subtracted from the clock.
-After all questions are answered or the timer reaches 0, then the game is over.
-When the game is over the quiz taker can provide their initials and save their score.
+## Description
+
+The application emphasizes the use of Javascript to provide quiz questions and collect inputs from the quiz taker to determine whether the answers are correct. When the quiz is complete, the app generates a score and appends a final page of results from the user data.
+
+## Link to Site
+
+https://codragon2020.github.io/code_quiz/index.html
+
+This site was made with:
+
+![tech stack](./images/html-css-js.png)
+
+## Screenshots
+
+![Challenge Page](./images/challenge_page.png)
+
+![Question Page](./images/question_page.png)
+
+![Final Score Page](./images/final_score.png)
+
+![High Scores Page](./images/high_scores.png)
