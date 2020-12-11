@@ -73,8 +73,6 @@ function homePage() {
     
     var startScore = 90; // Starting time
     timer.textContent = "Time: " + startScore; // Holder text in nav bar 
-
-    
 }
 
 // homePage();
@@ -214,8 +212,9 @@ function showHighScores() {
         });
     }) 
 
-    var penalty = 10;
+    
 // Check if Answer is correct or not
+var penalty = 10;
 function checkAnswer(event) {
     event.preventDefault();
 
@@ -234,11 +233,9 @@ function checkAnswer(event) {
     } else {
         answerResponse.textContent = "Wrong Answer!"; // If wrong, say so
         console.log('Wrong Answer')
-        // secondsLeft -= 10
         secondsLeft = secondsLeft - penalty;
         if (secondsLeft < 10) {
             secondsLeft = 1;
-            // timer.textContent = "Time: " + secondsLeft;
             showFinalScore();
       }
     }
@@ -265,7 +262,6 @@ function showFinalScore() {
     initials.textContent = "Enter Initials: "; // Form text
     initialButton.textContent = "Submit"; // Form button 
     console.log('showFinalScore is running');
-    
 }
 
 // Always load the homePage first
