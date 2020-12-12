@@ -20,7 +20,6 @@ var highScore = document.querySelector("#highScore");
 var clearHighScore = document.querySelector("#clearHighScore");
 var goBack = document.querySelector("#goBack");
 
-
 // Choices provided for each quiz question
 var choice1 = document.getElementById("one"); 
 var choice2 = document.getElementById("two");
@@ -75,18 +74,15 @@ function homePage() {
     timer.textContent = "Time: " + startScore; // Holder text in nav bar 
 }
 
-// homePage();
-
-
 // This will start the quiz from the homePage
 function startQuiz() { 
     quizChallengePage.style.display = "none"; // Hide first page after Start Quiz button is clicked
     quizQuestionsPage.style.display = "block"; // Next, show quiz questions page 
     finalScorePage.style.display = "none"; // Hide Final Score Page 
 
-    secondsLeft = 90; 
+    secondsLeft = 90; // Starting with 90 seconds on the clock
         
-    //Countdown that ends the quiz
+        //Countdown that ends the quiz
         var timerInterval;
         timerInterval = setInterval(function() { 
         secondsLeft--;
@@ -147,7 +143,6 @@ function showHighScores() {
     // Start quiz clock when the button is pushed
     submitButton.addEventListener("click", function() { 
         startQuiz()
-        console.log("start")
     })
 
     score.addEventListener("click", function() {
@@ -171,7 +166,7 @@ function showHighScores() {
             }
             console.log(finalScore);
             
-            // Stores the scores in local storage
+            // Stores the scores in localStorage
             var allScores = localStorage.getItem("allScores");
             if (allScores === null) {
                 allScores = [];
@@ -183,7 +178,7 @@ function showHighScores() {
             localStorage.setItem("allScores", newScore);
         }
 
-        // Retreives local storage 
+        // Retreives localStorage 
         var allScores = localStorage.getItem("allScores");
         allScores = JSON.parse(allScores);
 
@@ -194,7 +189,6 @@ function showHighScores() {
                 var createLi = document.createElement("li");
                 createLi.textContent = allScores[i].initials + " " + allScores[i].score;
                 highScore.appendChild(createLi);
-
             }
         }
 
@@ -212,27 +206,25 @@ function showHighScores() {
         });
     }) 
 
-    
+    var penalty = 10; // Deduct 10 secs from clock and score
 // Check if Answer is correct or not
-var penalty = 10;
 function checkAnswer(event) {
     event.preventDefault();
 
-    var answer = event.currentTarget.dataset.answer;
-    console.log('Selected Answer: ', answer);
-    var correctAnswer = null;
-    console.log('CorrectAnswer Defined: ', correctAnswer);
+    var answer = event.currentTarget.dataset.answer; // Assigns the selected answer to answer
+    var correctAnswer = null; // Set to null to define the variable and clear condition 
     
+    // Identifies the correct answer in the array and assigns it to correctAnswer to be used again
     if (quizQuestions[questionIndex].correct === answer) {
         correctAnswer = answer;
-        console.log('Correct Answer: ', correctAnswer);
     }
+    // First comparison looks for boolean conditional b/w correctAnswer and provided answer
     if (answer === correctAnswer) {
         answerResponse.textContent = "That's Correct!"; // If correct, say so
-        console.log('Thats Correct')
-    } else {
+    } 
+    // Second comparison looks for boolean conditional to be anything else
+    else {
         answerResponse.textContent = "Wrong Answer!"; // If wrong, say so
-        console.log('Wrong Answer')
         secondsLeft = secondsLeft - penalty;
         if (secondsLeft < 10) {
             secondsLeft = 1;
@@ -248,6 +240,7 @@ function checkAnswer(event) {
     showQuestions(); // Call show questions function to display the question and answers
 }
 
+// Final Score page function to show All Done and resulting score with initial input and Submit button
 function showFinalScore() {
     quizChallengePage.style.display = "none"; // Hides Challenge Page
     quizQuestionsPage.style.display = "none"; // Hides Questions Page
@@ -261,10 +254,7 @@ function showFinalScore() {
     finalScoreIs.textContent = "Your final score is " + secondsLeft;
     initials.textContent = "Enter Initials: "; // Form text
     initialButton.textContent = "Submit"; // Form button 
-    console.log('showFinalScore is running');
 }
-
-
 
 // Always load the homePage first
 homePage(); 
